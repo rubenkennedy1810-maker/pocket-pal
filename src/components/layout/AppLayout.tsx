@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -37,8 +38,9 @@ export function AppLayout({ children }: AppLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-border px-4 py-3 flex items-center gap-4">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-border px-4 py-3 flex items-center gap-2">
         <h1 className="text-lg font-bold text-primary flex-1">💰 Finance Tracker</h1>
+        <ThemeToggle />
         <Button 
           variant="ghost" 
           size="icon"
@@ -62,10 +64,13 @@ export function AppLayout({ children }: AppLayoutProps) {
         "lg:translate-x-0",
         mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
       )}>
-        <div className="p-6">
+        <div className="p-6 flex items-center justify-between">
           <h1 className="text-xl font-bold text-primary flex items-center gap-2">
             💰 Finance Tracker
           </h1>
+          <div className="hidden lg:block">
+            <ThemeToggle />
+          </div>
         </div>
         <nav className="px-3 space-y-1">
           {navItems.map(item => {
