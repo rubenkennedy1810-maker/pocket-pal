@@ -37,8 +37,8 @@ export function AppLayout({ children }: AppLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-border px-4 py-3 flex items-center justify-between">
-        <h1 className="text-lg font-bold text-primary">💰 Finance Tracker</h1>
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-border px-4 py-3 flex items-center gap-4">
+        <h1 className="text-lg font-bold text-primary flex-1">💰 Finance Tracker</h1>
         <Button 
           variant="ghost" 
           size="icon"
